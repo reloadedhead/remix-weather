@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "name": "remix-app-template",
+  "description": "",
+  "license": "",
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev",
+    "postinstall": "remix setup node",
+    "start": "remix-serve build",
+    "db:start": "docker-compose up",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js",
+    "db:populate": "cross-env NODE_ENV=\"development\" ts-node ./node_modules/typeorm-fixtures-cli/dist/cli.js ./app/fixtures --config ormconfig.js --sync --connection dev"
+  },
+  "dependencies": {
+    "@remix-run/react": "^1.0.6",
+    "@remix-run/serve": "^1.0.6",
+    "cross-env": "^7.0.3",
+    "mysql": "^2.18.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "reflect-metadata": "^0.1.13",
+    "remix": "^1.0.6",
+    "typeorm": "^0.2.41",
+    "typeorm-fixtures-cli": "^1.9.2"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.0.6",
+    "@types/node": "^17.0.5",
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "sideEffects": false
+}
