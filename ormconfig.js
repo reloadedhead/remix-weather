@@ -1,4 +1,4 @@
-const rootDir = 'app';
+const rootDir = 'build';
 
 const config = [
   {

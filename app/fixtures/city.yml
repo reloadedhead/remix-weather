@@ -1,7 +1,0 @@
-entity: City
-items:
-  City{1..10}:
-    id: '{{random.number}}'
-    name: '{{address.city}}'
-    state: '{{address.state}}'
-    countryCode: '{{address.countryCode}}'
