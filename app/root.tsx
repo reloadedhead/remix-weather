@@ -1,5 +1,4 @@
 import {
-  Link,
   Links,
   LiveReload,
   Meta,
@@ -11,7 +10,7 @@ import {
 import type { LinksFunction } from "remix";
 
 import styles from "./styles/app.css"
-import Navbar from "./components/Navbar";
+import Navbar from "./components/nav-bar";
 
 // https://remix.run/api/app#links
 export let links: LinksFunction = () => {
@@ -117,10 +116,15 @@ function Document({
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
-      <Navbar />
-      <div className="container">
-        {children}
-      </div>
+      <Navbar links={[
+        { name: "Today", url: "/" },
+        { name: "10 day forecast", url: "/forecast" },
+      ]} />
+      <main>
+        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+          {children}
+        </div>
+      </main>
     </div>
   );
 }
